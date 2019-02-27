@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Itera roulette</title>
+  <!--Icon-->
+  <link rel="icon" href="img/icon.png">
+  <!--Bootstrap-->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <!--Main CSS-->
+  <link rel="stylesheet" href="css/style.css">
+  <!--Fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Lato:700" rel="stylesheet">
+  <!--Script-->
+  
+</head>
+
+<body>
+
+
+  <!-- <div class="message">
+    <div class="trouble"><p>Code: 08rfef87789e | Bad: fucking test</p></div>
+  </div> -->
+
+
+
+  <h1>Itera roulette</h1>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-4">
+        <!--Block with roulette-->
+        <div class="roulette">
+        <!--Png image-->
+        <div class="roulette__img">
+            <img src="img/Wheel2.png" alt="" class="roulette__wheel">
+            <img src="img/sqrt.png" alt="" class="roulette__sqrt">
+          </div>
+          <!--Outputs-->
+          <div class="roulette__output">
+            <h2 class="roulette__headline">Result:</h2>
+            <p class="roulette__result">
+              ...
+            </p>
+            <button name="send-button" class="roulette__button">
+              Try luck
+            </button>
+          </div>
+        </div>
+        <div id="triangle"></div>
+      </div>
+      <div class="result"></div>
+
+      <div class="col-xl-4">
+        <!--Block with inputs-->
+        <div class="inputblock">
+          <!--Inputs for (1-36)Roulette-->
+          <div class="bet">
+            <h2 class="bet__headline">Your bet</h2>
+            <div class="bet__values">
+              <p class="bet__prange">Custom(ordinar,range)</p>
+              <p class="bet__pcol">Color</p>
+            </div>
+
+            <div class="bet__inputs">
+              <input type="number" class="bet__input_num">
+              <div class="bet__colors">
+                <input type="radio" class="bet__checkbox_black" name="col" id="colorbox_b">
+                <label for="colorbox_b">
+                  <div class="bet__blackcol"></div>
+                </label>
+
+                <input type="radio" id="colorbox_r" class="bet__checkbox_red" name="col">
+                <label for="colorbox_r">
+                  <div class="bet__redcol"></div>
+                </label>
+              </div>
+            </div>
+
+            <div id="floatingCirclesG">
+              <div class="f_circleG" id="frotateG_01"></div>
+              <div class="f_circleG" id="frotateG_02"></div>
+              <div class="f_circleG" id="frotateG_03"></div>
+              <div class="f_circleG" id="frotateG_04"></div>
+              <div class="f_circleG" id="frotateG_05"></div>
+              <div class="f_circleG" id="frotateG_06"></div>
+              <div class="f_circleG" id="frotateG_07"></div>
+              <div class="f_circleG" id="frotateG_08"></div>
+            </div>
+          </div>
+          </div>
+
+          <!--Inputs for (0-100)Roulette-->
+          <div class="range">
+              <h2 class="range__headline">Input range</h2>
+              <p class="range__first">Range 1</p>
+              <input type="text" class="range__input_text">
+              <p class="range__first">Range 2</p>
+              <input type="text" class="range__input_text">
+            </div>
+            <button type="button" name="range-button" class="range__button" id="btn1" >
+              Try luck
+            </button>
+        </div>
+
+      <div class="col-xl-4">
+        <!--History and stats block-->
+        <div class="log">
+          <!--History table-->
+          <h2 class="log__title">Games history</h2>
+          <table class="log__history">
+            <tr>
+              <th>Game</th>
+              <th>Dropped</th>
+              <th>Your bid</th>
+              <th>Result</th>
+            </tr>
+            <tr>
+              <td><div class="colored colored_widly">Range</div></td>
+              <td><div class="colored">0</div></td>
+              <td><div class="colored">0</div></td>
+              <td><div class="colored colored_wide">None</div></td>
+            </tr>
+            <tr>
+              <td><div class="colored colored_widly">Range</div></td>
+              <td><div class="colored">0</div></td>
+              <td><div class="colored">0</div></td>
+              <td><div class="colored colored_wide">None</div></td>
+            </tr>
+            <tr>
+              <td><div class="colored colored_widly">Range</div></td>
+              <td><div class="colored">0</div></td>
+              <td><div class="colored">0</div></td>
+              <td><div class="colored colored_wide">None</div></td>
+            </tr>
+          </table>
+          <!--Statistic table-->
+          <h2 class="log__title">Statistic of games</h2>
+          <table class="log__stats">
+            <tr>
+              <td>Value: <div class="colored">0</div></td>
+              <td>Count: <div class="colored">0</div></td>
+              <td>Persent: <div class="colored">00.0%</div></td>
+              <td>Value: <div class="colored">0</div></td>
+              <td>Count: <div class="colored">0</div></td>
+              <td>Percent: <div class="colored colored_wide">00.0%</div></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<script src="js/validation.js"></script>
+<script src="js/checkButtons.js"></script>
+<!-- <script src="js/rangeLoadWait.js"></script> -->
+<script src="js/request.js"></script>
+<script src="js/history.js"></script>
+<script src="js/onload.js"></script>
+<script src="js/stats.js"></script>
+<script src="js/reqRange.js"></script>
+<script src="js/stat.js"></script>
+<script src="js/rouletteStat.js"></script>
+<script src="js/onloadStat.js"></script>
+
+<!-- <script src="js/request.js"></script>
+<script src="js/history.js"></script>
+<script src="js/onload.js"></script>
+<script src="js/stats.js"></script>
+<script src="js/reqRange.js"></script>
+<script src="js/stat.js"></script>
+<script src="js/rouletteStat.js"></script>
+<script src="js/onloadStat.js"></script>  -->
+
+
+
+
+
+</html>
